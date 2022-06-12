@@ -1,3 +1,5 @@
+from arcade import Sprite
+
 class Pea(arcade.Sprite):
     def __init__(self, position_x, position_y):
         super().__init__("./bul.png", 0.12)

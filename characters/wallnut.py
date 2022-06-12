@@ -1,3 +1,6 @@
+from .plant import Plant
+
+
 class WallNut(Plant):
     def __init__(self):
         super().__init__(health=200, cost= 50)

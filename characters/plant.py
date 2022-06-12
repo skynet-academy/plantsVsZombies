@@ -1,4 +1,7 @@
-class Plant(arcade.AnimatedTimeSprite):
+from arcade import AnimatedTimeSprite
+
+
+class Plant(AnimatedTimeSprite):
     def __init__(self, health, cost):
         super().__init__(0.12)
         self.health = health

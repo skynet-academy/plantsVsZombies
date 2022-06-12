@@ -1,5 +1,5 @@
+from .zombie import Zombie
 class OrdinaryZombie(Zombie):
-   
     def __init__(self, line):
         super().__init__(health=12, line=line)
         self.texture = arcade.load_texture("./zom1.png")

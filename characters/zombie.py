@@ -1,5 +1,6 @@
+from arcade import AnimatedTimeSprite
 
-class Zombie(arcade.AnimatedTimeSprite):
+class Zombie(AnimatedTimeSprite):
    
     def __init__(self,health, line):
         super().__init__(0.09)

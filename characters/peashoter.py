@@ -1,3 +1,5 @@
+from .plant import Plant
+
 class PeaShooter(Plant):
 
     def __init__(self):

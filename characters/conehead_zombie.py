@@ -1,3 +1,4 @@
+from .zombie import Zombie
 class ConeheadZombie(Zombie):
     def __init__(self, line):
         super().__init__(health=20, line=line)

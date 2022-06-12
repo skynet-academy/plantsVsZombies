@@ -1,3 +1,6 @@
+from arcade import Sprite
+
+
 class Sun(arcade.Sprite):
     def __init__(self, position_x, position_y):
         super().__init__("./sun.png", 0.12)

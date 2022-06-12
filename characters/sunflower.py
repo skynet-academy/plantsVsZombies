@@ -1,3 +1,6 @@
+from .plant import Plant
+
+
 class SunFlower(Plant):
     def __init__(self):
         super().__init__(health=80, cost=50)

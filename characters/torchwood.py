@@ -1,3 +1,5 @@
+from .plant import Plant
+
 class Torchwood(Plant):
     def __init__(self):
         super().__init__(health=120, cost=175)

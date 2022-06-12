@@ -1,3 +1,6 @@
+from .zombie import Zombie
+
+
 class BuckheadZombie(Zombie):
     
     def __init__(self, line):
