@@ -13,6 +13,7 @@ from arcade import (
 # Importing some useful libraries
 from time import time
 from random import randint
+from .planting import lawn_x, lawn_y
 from . import settings
 import sys
 sys.path.append("..")
