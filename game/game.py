@@ -34,6 +34,8 @@ from characters.peashoter import PeaShooter
 from characters.torchwood import Torchwood
 from characters.wallnut import WallNut
 
+
+
 class PlantsVsZombies(Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
@@ -84,6 +86,12 @@ class PlantsVsZombies(Window):
             self.peas.update_animation()
             self.zombies.update()
             self.zombies.update_animation()
+            for pea in self.peas:
+                pea.zombies = self.zombies
+
+            for plant in self.plants:
+                if(plant.is_dead):
+                    self.lawns.remove((plant.line, plant.column))
 
             if(time() - self.zombie_spawn > self.attack_time and self.killed_zombies < 20):
                 center_y, line = lawn_y(randint(30,520))
@@ -102,6 +110,7 @@ class PlantsVsZombies(Window):
                 self.end_game = load_texture(LOGO)
                 self.game = False
 
+
     def on_mouse_press(self, x, y, button, modifiers):
         if(self.game):
             if(10 < x < 110 and 370 < y < 480):
@@ -110,18 +119,20 @@ class PlantsVsZombies(Window):
 
             if(10 < x < 110 and 255 < y < 365):
                 self.seed = PeaShooter()
+                play_sound(self.seed.flower_seed)
 
             if(10 < x < 110 and 140 < y < 250):
                 self.seed = WallNut()
+                play_sound(self.seed.flower_seed)
 
             if(10 < x < 110 and 25 < y < 135):
                 self.seed = Torchwood()
+                play_sound(self.seed.flower_seed)
 
             if(self.seed != None):
                 self.seed.center_x = x
                 self.seed.center_y = y
                 self.seed.alpha = 150
-        
 
     def on_mouse_motion(self, x, y, dx, dy):
         if(self.seed != None):
@@ -141,8 +152,10 @@ class PlantsVsZombies(Window):
                 self.seed.alpha = 255
                 self.plants.append(self.seed)
                 self.seed = None
+
             elif(self.seed is not None and 0 < x < 130):
                 self.seed = None
+
         for sun in self.spawns_suns:
             if(sun.left < x < sun.right and sun.bottom < y < sun.top):
                 sun.kill()

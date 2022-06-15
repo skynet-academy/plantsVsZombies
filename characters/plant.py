@@ -14,11 +14,12 @@ class Plant(AnimatedTimeSprite):
         self.line = 0
         self.column = 0
         self.flower_seed = load_sound(SOUND + "seed.mp3")
+        self.is_dead = False
 
     def update(self):
         if(self.health <= 0):
             self.kill()
-            window.lawns.remove((self.line, self.column))
+            self.is_dead = True
 
     def planting(self, center_x, center_y, line, column):
         play_sound(self.flower_seed) 

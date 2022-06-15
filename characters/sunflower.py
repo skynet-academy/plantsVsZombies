@@ -25,5 +25,5 @@ class SunFlower(Plant):
         super().update()
         if(time() - self.sun_spawn >= 15):
             sun = Sun(self.center_x + 20, self.center_y + 30)
-            window.spawns_suns.append(sun)
+            #window.spawns_suns.append(sun)
             self.sun_spawn = time()

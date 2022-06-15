@@ -21,7 +21,7 @@ class Torchwood(Plant):
 
     def update(self):
         super().update()
-        fire_peas = arcade.check_for_collision_with_list(self, window.peas)
+        fire_peas = arcade.check_for_collision_with_list(self, PlantsVsZombies.peas)
         for pea in fire_peas:
             pea.texture = load_texture(IMAGES + "firebul.png")
             pea.damage = 3

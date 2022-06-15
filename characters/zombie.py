@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from arcade import AnimatedTimeSprite
+from arcade import AnimatedTimeSprite, check_for_collision_with_list
 from game import settings
 
 class Zombie(AnimatedTimeSprite):
@@ -19,11 +19,11 @@ class Zombie(AnimatedTimeSprite):
             window.killed_zombies += 1
             window.attack_time -= 1
         eating = False
-        food = arcade.check_for_collision_with_list(self, window.plants)
-        for plant in food:
-            if(self.line == plant.line):
-                plant.health -= 0.5
-                eating = True
+        #food = check_for_collision_with_list(self, PlantsVsZombies.plants)
+        #for plant in food:
+        #    if(self.line == plant.line):
+        #        plant.health -= 0.5
+        #        eating = True
 
         if(eating):
             self.change_x = 0
@@ -33,4 +33,4 @@ class Zombie(AnimatedTimeSprite):
             self.angle = 0
 
         if(self.center_x < 200):
-            window.game = False
+            PlantsVsZombies.game = False

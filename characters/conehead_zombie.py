@@ -6,6 +6,8 @@ from .zombie import Zombie
 from arcade import load_texture
 
 IMAGES = settings.IMAGES
+
+
 class ConeheadZombie(Zombie):
     def __init__(self, line):
         super().__init__(health=20, line=line)
