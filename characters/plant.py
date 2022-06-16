@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from game import settings
+import settings
 from arcade import AnimatedTimeSprite, load_texture, load_sound, play_sound
 SOUND = settings.SOUNDS
 
@@ -15,11 +15,15 @@ class Plant(AnimatedTimeSprite):
         self.column = 0
         self.flower_seed = load_sound(SOUND + "seed.mp3")
         self.is_dead = False
+        self.same_line = False
+        self.add_pea = False
+        self.add_sun = False
+        self.add_fire = False
 
     def update(self):
         if(self.health <= 0):
-            self.kill()
             self.is_dead = True
+
 
     def planting(self, center_x, center_y, line, column):
         play_sound(self.flower_seed) 

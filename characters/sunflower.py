@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from game import settings
+import settings
 from .plant import Plant
 from .sun import Sun
 from arcade import load_texture
@@ -24,6 +24,5 @@ class SunFlower(Plant):
     def update(self):
         super().update()
         if(time() - self.sun_spawn >= 15):
-            sun = Sun(self.center_x + 20, self.center_y + 30)
-            #window.spawns_suns.append(sun)
+            self.add_sun = True
             self.sun_spawn = time()

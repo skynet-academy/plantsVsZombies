@@ -1,10 +1,11 @@
 import sys
 sys.path.append("..")
 
-from game import settings
-from arcade import Sprite, check_for_collision_with_list
+import settings
+from arcade import Sprite, load_sound
 
 IMAGES = settings.IMAGES
+SOUND = settings.SOUNDS
 
 class Pea(Sprite):
     def __init__(self, position_x, position_y):
@@ -12,16 +13,13 @@ class Pea(Sprite):
         self.center_x = position_x
         self.center_y = position_y
         self.damage = 1
+        self.sound = load_sound(SOUND + "hit.mp3")
         self.change_x = 7
-        self.zombies = None
+        self.hit = False
     
     def update(self):
         self.center_x += self.change_x
         if(self.center_x > settings.SCREEN_WIDTH):
             self.kill()
-
-        hits = check_for_collision_with_list(self, self.zombies)
-        if(len(hits) > 0):
-            for zombie in hits:
-                zombie.health -= self.damage
-                self.kill()
+        if(self.hit):
+            self.kill()

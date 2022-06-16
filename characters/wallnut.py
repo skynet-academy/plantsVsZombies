@@ -1,8 +1,8 @@
 import sys
 sys.path.append("..")
 
+import settings
 from .plant import Plant
-from game import settings
 from arcade import load_texture
 
 IMAGES = settings.IMAGES

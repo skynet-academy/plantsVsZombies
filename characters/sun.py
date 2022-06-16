@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 from arcade import Sprite
-from game import settings
+import settings
 
 IMAGES = settings.IMAGES
 
@@ -10,6 +10,7 @@ class Sun(Sprite):
         super().__init__(IMAGES + "sun.png", 0.12)
         self.center_x = position_x
         self.center_y = position_y
+
 
     def update(self):
         self.angle += 1

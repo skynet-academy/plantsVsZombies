@@ -1,31 +1,27 @@
-import sys
-sys.path.append("..")
-
-from arcade import AnimatedTimeSprite, check_for_collision_with_list
-from game import settings
+from arcade import AnimatedTimeSprite
 
 class Zombie(AnimatedTimeSprite):
-    def __init__(self,health, line):
+    def __init__(self,health, line, center_x):
         super().__init__(0.09)
         self.health = health
         self.line = line
-        self.center_x = settings.SCREEN_WIDTH
+        self.center_x = center_x
         self.change_x = 0.2
+        self.eating = False
+        self.is_dead = False
+        self.game_over = False
+        self.stop = False
 
     def update(self):
         self.center_x -= self.change_x
         if(self.health <= 0):
+            self.is_dead = True
             self.kill()
-            window.killed_zombies += 1
-            window.attack_time -= 1
-        eating = False
-        #food = check_for_collision_with_list(self, PlantsVsZombies.plants)
-        #for plant in food:
-        #    if(self.line == plant.line):
-        #        plant.health -= 0.5
-        #        eating = True
 
-        if(eating):
+        if(self.stop):
+            self.change_x = 0
+
+        if(self.eating):
             self.change_x = 0
             self.angle = 15
         else:
@@ -33,4 +29,6 @@ class Zombie(AnimatedTimeSprite):
             self.angle = 0
 
         if(self.center_x < 200):
-            PlantsVsZombies.game = False
+            self.game_over = True
+            self.stop = True
+
