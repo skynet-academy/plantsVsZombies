@@ -51,7 +51,8 @@ if you are in Windows:
 
 ### 4. Video game's tree structure.
 
-` |---- PlantsVsZombies
+```
+  |---- PlantsVsZombies
   |-----------|
   |           |---- assets
   |           |        |---- images
@@ -76,7 +77,7 @@ if you are in Windows:
   |           |         |---- wallnut.py
   |           |         |---- zombie.py
   |           |         |---- __init__.py
-`
+```
 
 
 
