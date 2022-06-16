@@ -39,10 +39,9 @@ terminal.
         - `python.exe -m pip --version`.
 3. Installing all packages to run "arcade" library.
     Once we have python and pip, we continue with arcade library.
-    - `pip install arcade`
+    - `pip install -r requirements.txt`
 
 ### 3 .How to play it.
-
 
 if you are in Linux or MacOs:
     - `python3 game.py`
