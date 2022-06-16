@@ -77,6 +77,16 @@ if you are in Windows:
   |           |         |---- wallnut.py
   |           |         |---- zombie.py
   |           |         |---- __init__.py
+  |           |
+  |           |---- __init__.py
+  |           |
+  |           |---- game.py
+  |           |
+  |           |---- README.md
+  |           |
+  |           |---- settings.py
+  |           |
+  |           |---- requirements.txt
 ```
 
 
