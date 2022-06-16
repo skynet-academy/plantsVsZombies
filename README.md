@@ -5,6 +5,7 @@
 Plants vs Zombies is a game made purely in python, it requires the basic
 understanding of object oriented programming. 
 
+Plants vs Zombies: version 0.1
 
 ## Summary:
 
@@ -49,5 +50,33 @@ if you are in Windows:
     - `python.exe game.py`
 
 ### 4. Video game's tree structure.
+
+` |---- PlantsVsZombies
+  |-----------|
+  |           |---- assets
+  |           |        |---- images
+  |           |        |---- __init__.py
+  |           |        |---- sounds
+  |           |
+  |           |---- utilities
+  |           |         |---- collisions.py
+  |           |         |---- eating_plants.py
+  |           |         |---- __init__.py
+  |           |         |---- plant_position.py
+  |           |
+  |           |---- charactes
+  |           |         |---- buckhead_zombie.py
+  |           |         |---- conehead_zombie.py
+  |           |         |---- ordinary_zombie.py
+  |           |         |---- pea.py
+  |           |         |---- peashoter.py
+  |           |         |---- sunflower.py
+  |           |         |---- sun.py
+  |           |         |---- torchwood.py
+  |           |         |---- wallnut.py
+  |           |         |---- zombie.py
+  |           |         |---- __init__.py
+`
+
 
 
