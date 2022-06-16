@@ -17,4 +17,4 @@ class Torchwood(Plant):
         for i in range(2):
             self.textures.append(load_texture(IMAGES + "tree2.png"))
         for i in range(2):
-            self.textures.append(load_texture(IMAGES + "tree3.png"))
+            self.texture.append(load_texture(IMAGES + "tree3.png"))
