@@ -22,7 +22,7 @@ Plants vs Zombies: version 0.1
 
 1. Installing Python:
     - On Ubuntu/Debian base:
-        - `sudo apt-get install python3`
+        - ```sudo apt-get install python3```
     - On Windows:
         - download the binaries <a href="https://www.python.org/downloads/">
           here</a> and follow the instructions.
@@ -30,23 +30,23 @@ Plants vs Zombies: version 0.1
 2. Installing pip:
     Once you have python, download the pip file by writting the following command in the
 terminal.
-    - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`.
+    - ```curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py```.
     
     then, after downloading the pip file, execute it using python.
     - On Linux/MacOs:
-        - `python3 -m pip --version`.
+        - ```python3 -m pip --version```.
     - On Windows:
-        - `python.exe -m pip --version`.
+        - ```python.exe -m pip --version```.
 3. Installing all packages to run "arcade" library.
     Once we have python and pip, we continue with arcade library.
-    - `pip install -r requirements.txt`
+    - ```pip install -r requirements.txt```
 
 ### 3 .How to play it.
 
 if you are in Linux or MacOs:
-    - `python3 game.py`
+    - ```python3 game.py```
 if you are in Windows:
-    - `python.exe game.py`
+    - ```python.exe game.py```
 
 ### 4. Video game's tree structure.
 
