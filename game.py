@@ -134,14 +134,12 @@ class PlantsVsZombies(Window):
                         plant.kill()
                         zombie.eating = False
 
-
             for pea in self.peas:
                 zombies = check_for_collision_with_list(pea, self.zombies)
                 for zombie in zombies:
                     zombie.health -= pea.damage
                     play_sound(pea.sound)
                     pea.hit = True
-
 
             if(time() - self.zombie_spawn > self.attack_time and self.killed_zombies < 20):
                 center_y, line = lawn_y(randint(30,520))

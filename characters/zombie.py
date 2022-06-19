@@ -1,8 +1,8 @@
-from arcade import AnimatedTimeSprite
+from arcade import AnimatedTimeBasedSprite
 
-class Zombie(AnimatedTimeSprite):
+class Zombie(AnimatedTimeBasedSprite):
     def __init__(self,health, line, center_x):
-        super().__init__(0.09)
+        super().__init__(scale=0.09)
         self.health = health
         self.line = line
         self.center_x = center_x

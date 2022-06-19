@@ -2,13 +2,13 @@ import sys
 sys.path.append("..")
 
 import settings
-from arcade import AnimatedTimeSprite, load_texture, load_sound, play_sound
+from arcade import AnimatedTimeBasedSprite, load_texture, load_sound, play_sound
 SOUND = settings.SOUNDS
 
 
-class Plant(AnimatedTimeSprite):
+class Plant(AnimatedTimeBasedSprite):
     def __init__(self, health, cost):
-        super().__init__(0.12)
+        super().__init__(scale=0.12)
         self.health = health
         self.cost = cost
         self.line = 0

@@ -4,7 +4,7 @@ sys.path.append("..")
 import settings
 from .plant import Plant
 from .sun import Sun
-from arcade import load_texture
+from arcade import load_texture, AnimationKeyframe
 from time import time
 
 IMAGES = settings.IMAGES
@@ -12,12 +12,11 @@ IMAGES = settings.IMAGES
 class SunFlower(Plant):
     def __init__(self):
         super().__init__(health=80, cost=50)
-        self.texture = load_texture(IMAGES + "sun1.png")
-        for i in range(3):
-            self.textures.append(load_texture(IMAGES + "sun1.png"))
-
-        for i in range(3):
-            self.textures.append(load_texture(IMAGES + "sun2.png"))
+        self.frames = [
+                AnimationKeyframe(1, 200, load_texture(IMAGES + "sun2.png")),
+                AnimationKeyframe(2, 200, load_texture(IMAGES + "sun1.png")),
+                AnimationKeyframe(3, 200, load_texture(IMAGES + "sun2.png")),
+                ]
         
         self.sun_spawn = time()
 
