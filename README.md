@@ -26,6 +26,7 @@ Plants vs Zombies: version 0.1
     - On Windows:
         - download the binaries <a href="https://www.python.org/downloads/">
           here</a> and follow the instructions.
+        - Don't forget to add python to path, to know how to do it, read <a href="https://datatofish.com/add-python-to-windows-path/">here.</a>
 
 2. Installing pip:
     Once you have python, download the pip file by writting the following command in the
